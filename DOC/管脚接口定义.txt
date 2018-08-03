@@ -1,0 +1,39 @@
+ATT7022E------>SPI2 (MISO--->PC2,MOSI--->PC3,SCK--->PB10)   片选1----->PB8     片选2------->PB9
+
+FM24W256------>I2C1（SDA--->PB7,SCL--->PB6）
+
+TP(触摸屏)--->SPI3(SCK--->PB3,MISO--->PB4,MOSI--->PC12) CS--->PD7   IRQ--->PA15     BUSY--->PD6 
+
+LAN8720 ------>RMII    RST------>PA0     时钟由外部50MHz有源晶振提供个PHY和RMII
+
+上位机串口---->USART1
+
+下位机串口---->USART3
+
+程序下载口---->SWD
+
+U盘IAP接口---->USB_OTG_HS
+
+
+LCD液晶显示屏：
+
+本次设计中选用TK043F1168TFT液晶屏，提供MCU8080接口或PSI+RGB接口
+本设计中选用DBI TYPE-B 16-bit接口（硬件选择，即BS0、BS3接地，BS1、BS2上拉），用FSMC总线模拟MCU8080接口：
+RS      ---->FMSC_A16(通过16bit地址位的高低信号模拟RS)
+SCL     ---->FMSC_NWE(LCD在DBI模式下的写控制引脚)
+RD      ---->FMSC_NOE
+CS      ---->FMSC_NE1
+DB[15:0]---->FMSC_D[15:0]
+
+
+/---------------------------------
+A母线防雷---->PA12
+B母线防雷---->PA11
+A母线开关---->PD13
+B母线开关---->PD12
+告警声输出 ---->PD3
+告警光输出 ---->PD2
+运行指示灯 ---->PC15
+
+
+以上为初步定义，PCB设计时根据实际布局情况调整

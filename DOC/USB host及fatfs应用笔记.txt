@@ -1,0 +1,7 @@
+application_state:
+application_Ready-->程序运行过程中插入U盘
+application_Disconnection-->程序运行过程中拔出U盘
+application_Start-->插入U盘的情况下重启运行程序
+application_Idle-->程序从运行开始就没有U盘
+
+挂载U盘时，选用mode option 0，f_open返回FR_NO_FILESYSTEM, 选用mode option 1,f_open返回FR_OK
